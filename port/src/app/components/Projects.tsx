@@ -77,30 +77,30 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" className="py-20 relative overflow-hidden">
+    <section id="projects" className="py-24 lg:py-32 relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 right-1/3 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-1/4 left-1/3 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         <motion.div
           ref={ref}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
           variants={containerVariants}
-          className="text-center mb-16"
+          className="text-center mb-20 lg:mb-24"
         >
           <motion.h2
             variants={itemVariants}
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6"
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-8"
           >
             Featured <span className="gradient-text">Projects</span>
           </motion.h2>
           <motion.p
             variants={itemVariants}
-            className="text-lg text-gray-400 max-w-3xl mx-auto"
+            className="text-xl lg:text-2xl text-gray-400 max-w-4xl mx-auto leading-relaxed"
           >
             A showcase of my work spanning web applications, mobile apps, and AI-powered solutions
           </motion.p>
@@ -110,7 +110,7 @@ export default function Projects() {
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
           variants={containerVariants}
-          className="grid lg:grid-cols-2 gap-8"
+          className="grid lg:grid-cols-2 gap-10 lg:gap-12"
         >
           {projects.map((project) => (
             <motion.div
@@ -144,34 +144,34 @@ export default function Projects() {
               </div>
 
               {/* Project Content */}
-              <div className="p-8">
-                <h3 className="text-2xl font-bold mb-3 group-hover:gradient-text transition-all">
+              <div className="p-8 lg:p-10">
+                <h3 className="text-2xl lg:text-3xl font-bold mb-4 group-hover:gradient-text transition-all">
                   {project.title}
                 </h3>
-                <p className="text-gray-400 mb-4 leading-relaxed">
+                <p className="text-gray-400 mb-6 leading-relaxed text-lg">
                   {project.description}
                 </p>
 
                 {/* Features */}
-                <div className="mb-6">
-                  <h4 className="text-sm font-semibold text-gray-300 mb-2">Key Features:</h4>
-                  <div className="grid grid-cols-2 gap-2">
+                <div className="mb-8">
+                  <h4 className="text-base font-semibold text-gray-300 mb-3">Key Features:</h4>
+                  <div className="grid grid-cols-2 gap-3">
                     {project.features.map((feature) => (
-                      <div key={feature} className="flex items-center space-x-2">
-                        <div className="w-1.5 h-1.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
-                        <span className="text-xs text-gray-400">{feature}</span>
+                      <div key={feature} className="flex items-center space-x-3">
+                        <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
+                        <span className="text-sm text-gray-400">{feature}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
                 {/* Tech Stack */}
-                <div className="mb-6">
-                  <div className="flex flex-wrap gap-2">
+                <div className="mb-8">
+                  <div className="flex flex-wrap gap-3">
                     {project.techs.map((tech) => (
                       <span
                         key={tech}
-                        className="px-2 py-1 bg-white/5 rounded-md text-xs font-medium text-gray-300 border border-white/10"
+                        className="px-3 py-2 bg-white/5 rounded-lg text-sm font-medium text-gray-300 border border-white/10"
                       >
                         {tech}
                       </span>
@@ -183,16 +183,16 @@ export default function Projects() {
                 <div className="flex space-x-4">
                   <button
                     onClick={() => window.open(project.demoUrl, '_blank')}
-                    className="flex-1 bg-gradient-to-r from-blue-500 to-purple-500 text-white py-3 px-4 rounded-lg font-medium hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 flex items-center justify-center space-x-2"
+                    className="flex-1 bg-gradient-to-r from-blue-500 to-purple-500 text-white py-4 px-5 rounded-xl font-medium hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 flex items-center justify-center space-x-2"
                   >
-                    <Eye className="w-4 h-4" />
+                    <Eye className="w-5 h-5" />
                     <span>View Demo</span>
                   </button>
                   <button
                     onClick={() => window.open(project.githubUrl, '_blank')}
-                    className="flex-1 glass border border-white/20 text-white py-3 px-4 rounded-lg font-medium hover:border-white/40 transition-all duration-300 flex items-center justify-center space-x-2"
+                    className="flex-1 glass border border-white/20 text-white py-4 px-5 rounded-xl font-medium hover:border-white/40 transition-all duration-300 flex items-center justify-center space-x-2"
                   >
-                    <Github className="w-4 h-4" />
+                    <Github className="w-5 h-5" />
                     <span>Source</span>
                   </button>
                 </div>
@@ -206,22 +206,22 @@ export default function Projects() {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-center mt-16"
+          className="text-center mt-20 lg:mt-24"
         >
-          <div className="glass p-8 rounded-2xl max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold mb-4">Interested in More Projects?</h3>
-            <p className="text-gray-400 mb-6">
+          <div className="glass p-10 lg:p-12 rounded-3xl max-w-3xl mx-auto">
+            <h3 className="text-3xl lg:text-4xl font-bold mb-6">Interested in More Projects?</h3>
+            <p className="text-gray-400 mb-8 text-lg leading-relaxed">
               These are just a few highlights from my portfolio. I&apos;m constantly working on new projects 
               and experimenting with cutting-edge technologies.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-5 justify-center">
               <button
                 onClick={() => window.open('https://github.com/preetampatel9478', '_blank')}
-                className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-6 py-3 rounded-full font-medium hover-glow transition-all duration-300 flex items-center justify-center space-x-2"
+                className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-8 py-4 rounded-full text-lg font-medium hover-glow transition-all duration-300 flex items-center justify-center space-x-3"
               >
-                <Github className="w-4 h-4" />
+                <Github className="w-5 h-5" />
                 <span>View GitHub</span>
-                <ExternalLink className="w-4 h-4" />
+                <ExternalLink className="w-5 h-5" />
               </button>
               <button
                 onClick={() => {
@@ -230,7 +230,7 @@ export default function Projects() {
                     element.scrollIntoView({ behavior: 'smooth' });
                   }
                 }}
-                className="glass border border-white/20 text-white px-6 py-3 rounded-full font-medium hover:border-white/40 transition-all duration-300"
+                className="glass border border-white/20 text-white px-8 py-4 rounded-full text-lg font-medium hover:border-white/40 transition-all duration-300"
               >
                 Discuss Your Project
               </button>

@@ -13,7 +13,7 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden py-16 md:py-20">
       {/* Background Effects */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-blue-500/20 rounded-full blur-3xl"></div>
@@ -21,20 +21,20 @@ export default function Hero() {
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-cyan-500/10 rounded-full blur-2xl animate-glow"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
           {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center lg:text-left"
+            className="text-center lg:text-left space-y-8"
           >
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-sm font-medium text-blue-400 mb-4 tracking-wide uppercase"
+              className="text-sm font-medium text-blue-400 tracking-wide uppercase"
             >
               Welcome to my world
             </motion.p>
@@ -43,13 +43,13 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
+              className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight"
             >
               Hi, I&apos;m{' '}
-              <span className="gradient-text">Shivpujan Kumar</span>
+              <span className="gradient-text block sm:inline">Shivpujan Kumar</span>
             </motion.h1>
 
-            <div className="h-16 mb-6">
+            <div className="h-20 lg:h-24">
               <TypewriterEffect
                 words={[
                   'Developer',
@@ -58,7 +58,7 @@ export default function Hero() {
                   'Tech Enthusiast',
                   'Innovation Driver'
                 ]}
-                className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-300"
+                className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-semibold text-gray-300"
               />
             </div>
 
@@ -66,7 +66,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
-              className="text-lg text-gray-400 mb-8 max-w-2xl"
+              className="text-lg lg:text-xl text-gray-400 max-w-2xl leading-relaxed"
             >
               I build powerful web & mobile apps that bring ideas to life. 
               Passionate about creating innovative solutions that solve real-world problems 
@@ -77,21 +77,21 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+              className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start"
             >
               <button
                 onClick={() => scrollToSection('#contact')}
-                className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-8 py-4 rounded-full font-medium hover-glow transition-all duration-300 flex items-center justify-center gap-2 group"
+                className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-10 py-4 rounded-full font-medium hover-glow transition-all duration-300 flex items-center justify-center gap-3 group text-lg"
               >
                 Hire Me
-                <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <ExternalLink className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
               <button
                 onClick={() => scrollToSection('#projects')}
-                className="glass border border-white/20 text-white px-8 py-4 rounded-full font-medium hover:border-white/40 transition-all duration-300 flex items-center justify-center gap-2 group"
+                className="glass border border-white/20 text-white px-10 py-4 rounded-full font-medium hover:border-white/40 transition-all duration-300 flex items-center justify-center gap-3 group text-lg"
               >
                 View My Work
-                <ChevronDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
+                <ChevronDown className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
               </button>
             </motion.div>
 
@@ -100,19 +100,19 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8 }}
-              className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-white/10"
+              className="grid grid-cols-3 gap-8 pt-12 border-t border-white/10"
             >
               <div className="text-center">
-                <div className="text-2xl font-bold gradient-text">4+</div>
-                <div className="text-sm text-gray-400">Projects Built</div>
+                <div className="text-3xl lg:text-4xl font-bold gradient-text">4+</div>
+                <div className="text-sm lg:text-base text-gray-400 mt-2">Projects Built</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold gradient-text">2+</div>
-                <div className="text-sm text-gray-400">Years Learning</div>
+                <div className="text-3xl lg:text-4xl font-bold gradient-text">2+</div>
+                <div className="text-sm lg:text-base text-gray-400 mt-2">Years Learning</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold gradient-text">1</div>
-                <div className="text-sm text-gray-400">Startup Founded</div>
+                <div className="text-3xl lg:text-4xl font-bold gradient-text">1</div>
+                <div className="text-sm lg:text-base text-gray-400 mt-2">Startup Founded</div>
               </div>
             </motion.div>
           </motion.div>

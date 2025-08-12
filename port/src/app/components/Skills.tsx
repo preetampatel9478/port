@@ -89,30 +89,30 @@ export default function Skills() {
   ];
 
   return (
-    <section id="skills" className="py-20 relative overflow-hidden">
+    <section id="skills" className="py-24 lg:py-32 relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0">
         <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-purple-500/5 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         <motion.div
           ref={ref}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
           variants={containerVariants}
-          className="text-center mb-16"
+          className="text-center mb-20 lg:mb-24"
         >
           <motion.h2
             variants={itemVariants}
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6"
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-8"
           >
             Skills & <span className="gradient-text">Services</span>
           </motion.h2>
           <motion.p
             variants={itemVariants}
-            className="text-lg text-gray-400 max-w-3xl mx-auto"
+            className="text-xl lg:text-2xl text-gray-400 max-w-4xl mx-auto leading-relaxed"
           >
             Comprehensive solutions from concept to deployment, leveraging cutting-edge technologies
           </motion.p>
@@ -123,26 +123,26 @@ export default function Skills() {
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
           variants={containerVariants}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 mb-24"
         >
           {services.map((service) => (
             <motion.div
               key={service.title}
               variants={itemVariants}
-              className="glass p-8 rounded-2xl hover-glow group cursor-pointer"
+              className="glass p-10 lg:p-12 rounded-2xl hover-glow group cursor-pointer"
               whileHover={{ y: -5 }}
               transition={{ duration: 0.3 }}
             >
-              <div className={`w-16 h-16 bg-gradient-to-r ${service.color} rounded-xl flex items-center justify-center mb-6 text-white group-hover:scale-110 transition-transform`}>
+              <div className={`w-20 h-20 bg-gradient-to-r ${service.color} rounded-xl flex items-center justify-center mb-8 text-white group-hover:scale-110 transition-transform`}>
                 {service.icon}
               </div>
-              <h3 className="text-xl font-semibold mb-4">{service.title}</h3>
-              <p className="text-gray-400 mb-6 leading-relaxed">{service.description}</p>
-              <div className="flex flex-wrap gap-2">
+              <h3 className="text-xl lg:text-2xl font-semibold mb-6">{service.title}</h3>
+              <p className="text-gray-400 mb-8 leading-relaxed text-lg">{service.description}</p>
+              <div className="flex flex-wrap gap-3">
                 {service.techs.map((tech) => (
                   <span
                     key={tech}
-                    className="px-3 py-1 bg-white/10 rounded-full text-xs font-medium text-gray-300 border border-white/20"
+                    className="px-4 py-2 bg-white/10 rounded-full text-sm font-medium text-gray-300 border border-white/20"
                   >
                     {tech}
                   </span>
